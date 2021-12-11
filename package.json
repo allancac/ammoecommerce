@@ -1,0 +1,36 @@
+{
+  "name": "ammoecommerce",
+  "version": "1.0.0",
+  "description": "Teste Tecnico para vaga de Desenvolvedor FullStack Jr - E-commerce",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allancac/ammoecommerce.git"
+  },
+  "keywords": [
+    "e-commerce"
+  ],
+  "author": "Allan Chaves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allancac/ammoecommerce/issues"
+  },
+  "homepage": "https://github.com/allancac/ammoecommerce#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.1",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
