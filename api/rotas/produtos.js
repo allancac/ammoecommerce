@@ -74,7 +74,7 @@ router.post('/', upload.single('imagem') ,(req, res, next) =>{
     //Cria um array que conterá imagens do produto
     camposProduto.album = [];
     if(req.file){
-        camposProduto.album.push({imagem:`https://server:3000/${req.file.path}`})
+        camposProduto.album.push({imagem:`https://api-ammo-interview.herokuapp.com/${req.file.path}`})
     }
    
     Produto.findOne({refProduto:req.body.refProduto})
