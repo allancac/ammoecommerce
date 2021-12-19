@@ -107,16 +107,18 @@ router.post('/', upload.single('imagem') ,(req, res, next) =>{
 // @route   GET api/produtos/{refProduto}
 // @desc    Busca um produto no banco de Dados
 // @access  Publico
-router.get('/:refProduto',(req, res, next)=>{
-    const refProduto = req.params.refProduto;
-    console.log(refProduto)
-    Produto.findOne({refProduto:refProduto})
+router.get('/:produto',(req, res, next)=>{
+    const buscaProduto = req.params.produto;
+
+    Produto.find(
+        {$or:[
+            {refProduto:buscaProduto},
+            {descricao:{$regex:buscaProduto, $options: '-i'}}
+          ]
+        })
         .then(produto=>{
             if(produto){
-                res.status(200).json(
-                    {mensagem:"Produto encontrado com sucesso.",
-                    produtoCriado:produto
-                    })
+                res.status(200).json(produto)
             }else{
                 res.status(404).json({
                     mensagem: "Produto não encontrado"
